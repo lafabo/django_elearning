@@ -57,7 +57,6 @@ class Content(models.Model):
 		ordering = ['order']
 
 
-
 # Model for each type of content
 class ItemBase(models.Model):
 	owner = models.ForeignKey(User, related_name='%(class)s_related')
