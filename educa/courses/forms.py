@@ -1,10 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+from django import forms
+from django.forms.models import inlineformset_factory
+from .models import Course, Module
 
-
-
-
-
-
-if __name__ == '__main__':
-	pass
+ModuleFormSet = inlineformset_factory(Course, Module, fields=['title', 'description'], extra=2, can_delete=True)

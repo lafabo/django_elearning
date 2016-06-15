@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}Edit {{ course.title }}{% endblock %}
+
+{% block content %}
+    <h1>Edit "{{ course.title }}"</h1>
+    <div class="module">
+        <h2>Course modules</h2>
+        <form action="." method="post">
+            {{ formset }}
+            {{ formset.manage_form }}
+            {% csrf_token %}
+            <input type="submit" class="button" value="Save modules">
+        </form>
+    </div>
+{% endblock %}
